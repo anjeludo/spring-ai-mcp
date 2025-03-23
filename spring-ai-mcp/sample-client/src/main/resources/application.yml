@@ -3,3 +3,8 @@ spring.ai.mcp.client.sse.connections:
     url: http://localhost:8060
   account-mcp-server:
     url: http://localhost:8040
+spring:
+  ai:
+    ollama:
+      chat:
+        model: llama3.2
