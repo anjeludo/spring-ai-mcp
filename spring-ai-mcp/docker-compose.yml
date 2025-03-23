@@ -1,0 +1,32 @@
+
+services:
+  sample-client:
+    build:
+      context: ./sample-client
+    ports:
+      - "8081:8080"
+    depends_on:
+      - person-mcp-service
+      - account-mcp-service
+    networks:
+      - spring-ai-network
+
+  person-mcp-service:
+    build:
+      context: ./person-mcp-service
+    ports:
+      - "8060:8080"
+    networks:
+      - spring-ai-network
+
+  account-mcp-service:
+    build:
+      context: ./account-mcp-service
+    ports:
+      - "8040:8080"
+    networks:
+      - spring-ai-network
+
+networks:
+  spring-ai-network:
+    driver: bridge
